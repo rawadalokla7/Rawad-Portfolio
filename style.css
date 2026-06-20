@@ -1,0 +1,131 @@
+/**
+ * Rawad Khaled Alokla - Custom Stylesheet
+ * ----------------------------------------------------------------------------
+ * Contains premium styling, custom animations, custom font imports, and
+ * webkit scrollbar overrides to match the immersive twilight visual theme.
+ * ----------------------------------------------------------------------------
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+/* Dynamic Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0C0C0C;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 99px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(6, 182, 212, 0.4);
+}
+
+/* Selection colors */
+::selection {
+  background: rgba(6, 182, 212, 0.3);
+  color: #ffffff;
+}
+
+/* Grid background style */
+.bg-radial-grid {
+  background-size: 24px 24px;
+  background-image: 
+    radial-gradient(ellipse at center, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+}
+
+/* Elegant Text shadows for high contrast display typography */
+.text-shadow-sm {
+  text-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
+}
+
+.glow-hover {
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.glow-hover:hover {
+  border-color: rgba(6, 182, 212, 0.3);
+  box-shadow: 0 0 24px rgba(6, 182, 212, 0.1);
+}
+
+/* Custom Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.40s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Glassmorphic elements fallback */
+.bg-glass {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Custom slider aesthetics */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #06b6d4;
+  cursor: pointer;
+  transition: transform 0.1s;
+}
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+}
+input[type="range"]::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #06b6d4;
+  cursor: pointer;
+  border: none;
+  transition: transform 0.1s;
+}
+input[type="range"]::-moz-range-thumb:hover {
+  transform: scale(1.2);
+}
+
+/* Bi-directional support alignment */
+html[dir="rtl"] {
+  font-family: "Inter", "Cairo", sans-serif;
+}
+
+/* Quick interactive glowing backdrops */
+.ambient-glow-cyan {
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.08) 0%, transparent 70%);
+}
+.ambient-glow-pink {
+  background: radial-gradient(circle, rgba(236, 72, 153, 0.08) 0%, transparent 70%);
+}
+.ambient-glow-amber {
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.06) 0%, transparent 70%);
+}
+.ambient-glow-emerald {
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.06) 0%, transparent 70%);
+}
+
+/* Premium slow hover floating animations for portrait */
+@keyframes floatPortrait {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(0.5deg);
+  }
+}
+.animate-float-portrait {
+  animation: floatPortrait 6s ease-in-out infinite;
+}
